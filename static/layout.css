@@ -1,0 +1,43 @@
+
+.header-jlc{
+    background-color: #D37841;
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    height: 10%;
+  
+    align-items: center;
+
+
+}
+
+
+.header-topicos{
+    display: flex;
+    background-color:#FFB37E;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 20px;
+    width: 60%;
+
+}
+
+.header-lista{
+    gap:20px;
+    display: flex;
+    list-style: none;
+    
+}
+
+.header-logo{
+
+}
+
+
+
+
+
+
+
+
