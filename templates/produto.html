@@ -1,0 +1,22 @@
+{%extends 'layout.html'%}
+{%block content%}
+<link rel="stylesheet" href="../static/produtos.css">
+<section class="cards__container">
+  {% for produto in itens_produtos %}
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src={{produto.img_1}} class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{nome_prod}}</h5>
+                            <h5 class="card-title">{{preco_prod}}</h5>
+                            <button class="card-button">Comprar Agora</button>
+                            <button class="card-button">carrinho</button>
+                        </div>
+                    </div>
+                </div>
+
+                
+{%endfor}
+        </section>
+{%endblock%}

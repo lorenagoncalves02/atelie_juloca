@@ -1,11 +1,10 @@
 
 .header-jlc{
-    background-color: #D37841;
+    background-color:  #fcd7b0;
     display: flex;
     padding: 20px;
     width: 100%;
     height: 10%;
-  
     align-items: center;
 
 
@@ -14,12 +13,12 @@
 
 .header-topicos{
     display: flex;
-    background-color:#FFB37E;
+    background-color: #fff9f2;
     justify-content: center;
     align-items: center;
     height: 50px;
     border-radius: 20px;
-    width: 60%;
+    width: 50%;
 
 }
 
@@ -27,17 +26,50 @@
     gap:20px;
     display: flex;
     list-style: none;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(45, 30, 10);
+    font-size:larger;
+
+    
     
 }
 
-.header-logo{
+.form-header{
+    padding: 50px;
+}
+.form-header-inp {
+    background-color: #fff9f2;
+  width: 200px;      
+  padding: 12px 20px;
+  font-size: 16px;     
+  border: 3px;
+  border-radius: 25px;
+  outline: none;       
+}
 
+.form-header-button{
+    background-color: #fff9f2;
+    width: 200px;      
+  padding: 12px 20px;
+  font-size: 16px;     
+  border: 3px ;
+  border-radius: 25px;
+  outline: none;      
 }
 
 
 
 
 
+.footer-jlc{
+    background-color: #fcd7b0;
+    display: flex;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 
 
-
+}
