@@ -6,7 +6,7 @@ def conectar():
         port= 3306,
         user= "root",
         password= "root",
-        database= "hamburgueria"
+        database= "juloca"
     )
 
     cursor = conexao.cursor(dictionary=True)

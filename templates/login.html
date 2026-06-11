@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../static/login.css">
 </head>
 <body>
+    <form method="post" action="/login/post">
 
     <div class="container">
 
@@ -26,17 +27,17 @@
 
                 <div class="input-box">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="Email ID">
+                    <input type="email" placeholder="Email ID" name="email">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Password" name="senha">
                 </div>
 
                 <div class="options">
-
-                    <a href="#">Ainda não possui uma conta? cadastre-se!</a>
+                    Ainda não possui uma conta?
+                    <a href="/cadastro">Cadastre-se</a>
                 </div>
 
                 <button type="submit">LOGIN</button>
@@ -46,6 +47,10 @@
         </div>
 
     </div>
+
+    </form>
+
+ 
 
 </body>
 </html>

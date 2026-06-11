@@ -23,31 +23,31 @@
             </div>
 
             <!-- Formulário -->
-            <form>
+            <form method="post" action="/cadastro/post">
 
                 <div class="input-box">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Nome Completo">
+                    <input type="text" placeholder="Nome Completo" name="nome">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-phone"></i>
-                    <input type="tel" placeholder="Telefone">
+                    <input type="tel" placeholder="Telefone" name="telefone">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email" name="email">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Endereço">
+                    <input type="text" placeholder="Endereço" name="endereco">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Senha">
+                    <input type="password" placeholder="Senha" name="senha">
                 </div>
 
                 <!-- Botão -->
@@ -56,7 +56,7 @@
                 <!-- Login -->
                 <div class="login-link">
                     Já tem uma conta?
-                    <a href="#">Entrar</a>
+                    <a href="/login">Entrar</a>
                 </div>
 
             </form>

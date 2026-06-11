@@ -19,7 +19,6 @@ body{
     overflow: hidden;
 }
 
-/* FUNDO COM EFEITO */
 
 body::before{
     content: "";
@@ -57,14 +56,12 @@ body::after{
     right: -100px;
 }
 
-/* CONTAINER */
 
 .container{
     position: relative;
     z-index: 1;
 }
 
-/* CARD */
 
 .login-card{
     width: 400px;
@@ -144,6 +141,7 @@ body::after{
 
 .options{
     width: 100%;
+    color: #7a3b00;
 
     display: flex;
     justify-content: space-between;
@@ -200,7 +198,6 @@ button:hover{
     box-shadow: 0 0 20px rgba(255, 123, 0, 0.5);
 }
 
-/* RESPONSIVO */
 
 @media(max-width: 500px){
 
