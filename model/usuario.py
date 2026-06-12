@@ -36,3 +36,9 @@ def verificar_usuario(email, senha):
     except Exception as erro:
         print(erro)
 
+
+
+
+
+
+
