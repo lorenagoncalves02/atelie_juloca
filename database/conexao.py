@@ -12,3 +12,4 @@ def conectar():
     cursor = conexao.cursor(dictionary=True)
 
     return conexao, cursor
+

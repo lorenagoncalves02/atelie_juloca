@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff9f2;
+}
+/* Carrossel */
+.carousel-img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* Faixa destaque */
+.destaques{
+    background-image: url(img/destaques.png);
+    width: 100vw;
+    height: 20vh;  
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    color: #7a3b00;
+    font-family:'Franklin Gothic Medium';
+    
+}
+
+/* Destaque amigurumi */
+
+.info-section-amigu {
+    background-color: white;
+    border-radius: 20px;
+    border-left: 8px solid #FFC0CB; /* Detalhe lateral */
+    border-right: 8px solid #FFC0CB;
+    color: #FFC0CB;
+}
+
+.info-section-kit {
+    background-color: white;
+    border-radius: 20px;
+    border-left: 8px solid #A2E8DD; /* Detalhe lateral */
+    border-right: 8px solid #A2E8DD; 
+    color: #A2E8DD;
+
+}
+
+.info-section-linha {
+    background-color: white;
+    border-radius: 20px;
+    border-left: 8px solid #fffa98; /* Detalhe lateral */
+    border-right: 8px solid #fffa98;
+    color: #fffa98;
+}
+
+.info-section-ace {
+    background-color: white;
+    border-radius: 20px;
+    border-left: 8px solid #CBCCFF; /* Detalhe lateral */
+    border-right: 8px solid #CBCCFF;
+    color: #CBCCFF;
+}
+
+/* Cards */
+.card{
+    height: 30vh;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.card-amigu{
+    border-color: #FFC0CB
+}
+
+.card-kit{
+    border-color: #A2E8DD
+}
+
+.card-linha{
+    border-color: #fffa98
+}
+
+.card-ace{
+    border-color: #CBCCFF
+}
+
+.card-body{
+    padding-top: 40px;
+    color: #7a3b00;
+}
+
+/* Botões cards */
+
+button{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: #7a3b00;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.btn-amigu{
+    background-color: #FFC0CB;
+}
+
+.btn-kits{
+    background-color: #A2E8DD;
+}
+
+.btn-linha{
+    background-color: #fffa98;
+}
+
+.btn-ace{
+    background-color: #CBCCFF;
+}
