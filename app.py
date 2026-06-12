@@ -1,7 +1,7 @@
 from flask import Flask, flash, redirect, render_template, request, session
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
-# from model.produtos import select_produtos
+from model.produtos import select_produtos
 
 app = Flask(__name__)
 app.secret_key = "mem424"
