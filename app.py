@@ -52,9 +52,6 @@ def fazer_login():
         return redirect("/login")
     
 
-# @app.route("/api/categorias")
-# def api_categorias():
-    
 
 @app.route("/produtos")
 def pg_produtos():

@@ -1,102 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto de Crochê</title>
-    <link rel="stylesheet" href="../static/produto_unico.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../static/produto_unico.css">
+
+<title>Produto</title>
+
 </head>
 <body>
 
-    <section class="produto">
+<!-- CATEGORIA -->
 
-        <!-- LADO ESQUERDO -->
-        <div class="galeria">
+<div class="breadcrumb">
+    <span>Home</span>
+    <span>Maquiagem</span>
+    <span>Rosto</span>
+    <span>Blush</span>
+</div>
 
-            <div class="imagem-principal">
-                <img src="img/bolsa-principal.jpg" alt="Bolsa de Crochê">
-            </div>
+<!-- PRODUTO -->
 
-            <div class="miniaturas">
-                <img src="img/bolsa1.jpg" alt="">
-                <img src="img/bolsa2.jpg" alt="">
-                <img src="img/bolsa3.jpg" alt="">
-            </div>
+<section class="produto-container">
 
-        </div>
+    <div class="galeria">
 
-        <!-- LADO DIREITO -->
-        <div class="info-produto">
+        <img
+            src="https://picsum.photos/700/700?random=1"
+            class="imagem-principal"
+            alt="Produto">
 
-            <span class="categoria">
-                Bolsas Artesanais
-            </span>
+        <div class="miniaturas">
 
-            <h1>
-                Bolsa de Crochê Floral Feita à Mão
-            </h1>
+            <img src="https://picsum.photos/200/200?random=1">
 
-            <p class="descricao">
-                Bolsa artesanal confeccionada em crochê com acabamento
-                delicado e resistente. Produzida manualmente com fios
-                premium, perfeita para uso diário ou ocasiões especiais.
-            </p>
+            <img src="https://picsum.photos/200/200?random=2">
 
-            <div class="linha"></div>
-
-            <div class="preco">
-                R$ 129,90
-            </div>
-
-            <button>
-                ADICIONAR AO CARRINHO
-            </button>
+            <img src="https://picsum.photos/200/200?random=3">
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- COMENTÁRIOS -->
+    <div class="info-produto">
 
-    <section class="comentarios">
+        <div class="categoria">
+            Categoria: Blush Cremoso
+        </div>
 
-        <h2>Comentários dos Clientes</h2>
+        <h1 class="nome-produto">
+            BT X Coca-Cola Stick Blush Classic Brown
+        </h1>
+
+        <div class="preco">
+            R$ 71,92
+        </div>
+
+        <div class="descricao">
+            Blush em stick com textura cremosa que desliza
+            suavemente sobre a pele, proporcionando um
+            acabamento natural e uniforme. Pode ser utilizado
+            nas bochechas, lábios e olhos para criar um visual
+            completo e sofisticado.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COMENTÁRIOS -->
+
+<section class="comentarios">
+
+    <h2>Comentários</h2>
+
+    <form class="form-comentario">
+
+        <input
+            type="text"
+            placeholder="Seu nome">
+
+        <textarea
+            placeholder="Digite seu comentário" name="comentario">
+        </textarea>
+
+        <input type="hidden" value="3" name="cod_prod" >
+
+        <button type="submit">
+            Enviar Comentário
+        </button>
+
+    </form>
+
+    <div class="lista-comentarios">
 
         <div class="comentario">
-            <strong>Mariana</strong>
-            <p>
-                Produto lindo e muito bem feito.
-                A qualidade superou minhas expectativas.
-            </p>
+            <div class="usuario">
+                Maria Oliveira
+            </div>
+
+            <div class="texto-comentario">
+                Produto excelente! A pigmentação é muito boa
+                e dura bastante na pele.
+            </div>
         </div>
 
         <div class="comentario">
-            <strong>Fernanda</strong>
-            <p>
-                Acabamento impecável. Compraria novamente.
-            </p>
+            <div class="usuario">
+                João Santos
+            </div>
+
+            <div class="texto-comentario">
+                Gostei bastante da textura. Fácil de espalhar
+                e deixa um acabamento natural.
+            </div>
         </div>
 
-        <form class="novo-comentario">
+        <div class="comentario">
+            <div class="usuario">
+                Ana Paula
+            </div>
 
-            <h3>Deixe seu comentário</h3>
+            <div class="texto-comentario">
+                Chegou rápido e veio muito bem embalado.
+            </div>
+        </div>
 
-            <input
-                type="text"
-                placeholder="Seu nome"
-            >
+    </div>
 
-            <textarea
-                placeholder="Escreva sua avaliação..."
-            ></textarea>
-
-            <button type="submit">
-                Enviar Comentário
-            </button>
-
-        </form>
-
-    </section>
+</section>
 
 </body>
 </html>
