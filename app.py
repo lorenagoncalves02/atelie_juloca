@@ -1,5 +1,4 @@
 from flask import Flask, flash, redirect, render_template, request, session
-import mysql.connector
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
 
@@ -8,6 +7,8 @@ app.secret_key = "mem424"
 
 
 @app.route("/")
+def home():
+    return render_template("principal.html")
 
 @app.route("/cadastro", methods=["GET"])
 def pagina_cadastro():
@@ -48,6 +49,7 @@ def fazer_login():
     else:
         flash("Usuário ou senha inválidos.", "danger")
         return redirect("/login")
+
 
 
 
