@@ -1,5 +1,6 @@
 from flask import Flask, flash, redirect, render_template, request, session
 import mysql.connector
+from model.comentarios import inserir_comentario
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
 
@@ -48,6 +49,31 @@ def fazer_login():
     else:
         flash("Usuário ou senha inválidos.", "danger")
         return redirect("/login")
+    
+
+    
+@app.route("/produto", methods=["GET"])
+def pagina_produto_unico():
+    return render_template("produto_unico.html")
+
+
+@app.route("/produto/comentarios", methods=["POST"])
+def pagina_comentarios():
+    if "usuario_logado" in session:
+        email = session["usuario_logado"]["email"]
+        comentario = request.form.get("comentario")
+        cod_produto = request.form.get("cod_prod")
+        inserir_comentario(email, comentario, cod_produto)
+
+
+
+
+
+
+
+    
+
+
 
 
 
