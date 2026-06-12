@@ -185,9 +185,73 @@ VALUES(
 "./static/img/37.png",
 "./static/img/37.png",
 "5"
+),
+(
+"Kit Stitch",
+"Kit completo com agulha, linhas, acessórios e receita.",
+"60.00",
+"./static/img/24.png",
+"./static/img/25.png",
+"./static/img/25.png",
+"4"
+), 
+(
+"Kit anjinho",
+"Kit completo com agulha, linhas, acessórios e receita.",
+"60.00",
+"./static/img/26.png",
+"./static/img/27_1.png",
+"./static/img/27_1.png",
+"4"
+),
+(
+"Kit Capivara",
+"Kit completo com agulha, linhas, acessórios e receita.",
+"60.00",
+"./static/img/29_1.png",
+"./static/img/28_1.png",
+"./static/img/28_1.png",
+"4"
+),
+(
+"Kit Patinho",
+"Kit completo com agulha, linhas, acessórios e receita.",
+"60.00",
+"./static/img/31_1.png",
+"./static/img/30_1.png",
+"./static/img/30_1.png",
+"4"
+),
+(
+"Kit Leãozinho",
+"Kit completo com agulha, linhas, acessórios e receita.",
+"60.00",
+"./static/img/35_1.png",
+"./static/img/34_1.png",
+"./static/img/34_1.png",
+"4"
+),
+(
+"Kit Homem-Aranha",
+"Kit completo com agulha, linhas, acessórios e receita.",
+"60.00",
+"./static/img/33_1.png",
+"./static/img/32_1.png",
+"./static/img/32_1.png",
+"4"
+),
+(
+"Kit Elefantinho",
+"Kit completo com agulha, linhas, acessórios e receita.",
+"60.00",
+"./static/img/37_1.png",
+"./static/img/36_1.png",
+"./static/img/36_1.png",
+"4"
 );
 
-
+select * from produto;
+select * from categoria;
 
 
 
