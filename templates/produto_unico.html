@@ -10,33 +10,25 @@
 </head>
 <body>
 
-<!-- CATEGORIA -->
-
-<div class="breadcrumb">
-    <span>Home</span>
-    <span>Maquiagem</span>
-    <span>Rosto</span>
-    <span>Blush</span>
-</div>
-
 <!-- PRODUTO -->
 
+{% block conteudo %} 
 <section class="produto-container">
 
     <div class="galeria">
 
         <img
-            src="https://picsum.photos/700/700?random=1"
+            src="{{ unico.img1 }}"
             class="imagem-principal"
             alt="Produto">
 
         <div class="miniaturas">
 
-            <img src="https://picsum.photos/200/200?random=1">
+            <img src="{{ unico.img1 }}">
 
-            <img src="https://picsum.photos/200/200?random=2">
+            <img src="{{ unico.img2 }}">
 
-            <img src="https://picsum.photos/200/200?random=3">
+            <img src="{{ unico.img3 }}">
 
         </div>
 
@@ -49,26 +41,24 @@
         </div>
 
         <h1 class="nome-produto">
-            BT X Coca-Cola Stick Blush Classic Brown
+            {{ unico.nome_prod }}
         </h1>
 
         <div class="preco">
-            R$ 71,92
+            {{ unico.preco_prod }}
         </div>
 
         <div class="descricao">
-            Blush em stick com textura cremosa que desliza
-            suavemente sobre a pele, proporcionando um
-            acabamento natural e uniforme. Pode ser utilizado
-            nas bochechas, lábios e olhos para criar um visual
-            completo e sofisticado.
+            {{ unico.descricao_prod }}
         </div>
 
     </div>
 
 </section>
+{% endblock %}
 
 <!-- COMENTÁRIOS -->
+
 
 <section class="comentarios">
 
