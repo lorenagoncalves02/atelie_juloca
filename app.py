@@ -1,6 +1,7 @@
 from flask import Flask, flash, redirect, render_template, request, session
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
+from model.produtos import select_produtos
 
 app = Flask(__name__)
 app.secret_key = "mem424"
@@ -49,19 +50,16 @@ def fazer_login():
     else:
         flash("Usuário ou senha inválidos.", "danger")
         return redirect("/login")
+    
 
+# @app.route("/api/categorias")
+# def api_categorias():
+    
 
-
-
-
-
-
-
-
-
-
-
-
+@app.route("/produtos")
+def pg_produtos():
+    itens_produtos = select_produtos()
+    return render_template ("produto.html", item_produtos = itens_produtos)
 
 
 
@@ -70,3 +68,9 @@ def fazer_login():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
+

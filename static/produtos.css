@@ -1,0 +1,106 @@
+/* ==========================================
+   Grid de 3 Colunas (Sem quebras)
+   ========================================== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+
+}
+
+.row > .col {
+    /* Força exatamente 3 colunas por linha descontando o espaçamento */
+    flex: 0 1 calc(33.333% - 14px);
+    min-width: 280px;
+}
+
+/* ==========================================
+   Estilo do Card
+   ========================================== */
+.card {
+    background-color: #fff9f2; /* Sua cor clara */
+    border: 2px solid #fcd7b0; /* Sua cor escura na borda */
+    border-radius: 15px;       /* Borda arredondada no card */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: #ffffff;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    color: #4a3e3d;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #332a29;
+    margin-top: auto; /* Empurra o preço e botões para o final */
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   CSS Básico dos Botões (Arredondados)
+   ========================================== */
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo base comum para ambos os botões */
+.btn-comprar, .btn-carrinho {
+    height: 42px;
+    border: none;
+    border-radius: 50px; /* Deixa as bordas totalmente arredondadas (estilo pílula) */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Botão Comprar Agora */
+.btn-comprar {
+    flex-grow: 1;
+    background-color: #fcd7b0; /* Sua cor escura */
+    color: #5c4326;
+}
+
+.btn-comprar:hover {
+    background-color: #f3be8b; /* Escurece um pouco ao passar o mouse */
+}
+
+/* Botão do Ícone do Carrinho */
+.btn-carrinho {
+    width: 42px; /* Redondo perfeito junto com o border-radius */
+    background-color: #ffffff;
+    border: 2px solid #fcd7b0;
+    color: #5c4326;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-carrinho:hover {
+    background-color: #fcd7b0;
+}
+
+.btn-carrinho i {
+    font-size: 1.1rem;
+}
