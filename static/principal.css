@@ -83,20 +83,40 @@ body{
     border-color: #A2E8DD
 }
 
+.card-linha{
+    border-color: #fffa98
+}
+
+.card-ace{
+    border-color: #CBCCFF
+}
+
 .card-body{
     padding-top: 40px;
     color: #7a3b00;
-    
 }
 
 /* Botões cards */
 
+button{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
 .btn-amigu{
     background-color: #FFC0CB;
-    border: none;
+    
 }
 
 .btn-kits{
     background-color: #A2E8DD;
-    border: none;
+}
+
+.btn-linha{
+    background-color: #fffa98;
+}
+
+.btn-ace{
+    background-color: #CBCCFF;
 }
