@@ -1,3 +1,11 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                     url(img/destaques.png);
+}
+
+
 /* ==========================================
    Grid de 3 Colunas (Sem quebras)
    ========================================== */
@@ -103,4 +111,8 @@
 
 .btn-carrinho i {
     font-size: 1.1rem;
+}
+
+.cards__container{
+    padding-bottom: 80px;
 }

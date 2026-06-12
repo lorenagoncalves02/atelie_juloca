@@ -98,26 +98,21 @@ body{
 
 /* Botões cards */
 
-button{
+.btn{
     border-radius: 5px;
     border: none;
-    padding: 5px;
+    padding: 8px;
     color: #7a3b00;
     font-family: 'Franklin Gothic Medium';
+    background-color: #fcd7b0;
+    
 }
 
-.btn-amigu{
-    background-color: #FFC0CB;
+.btn-ver{
+    border: none;
+    background-color: #fcd7b0;
 }
 
-.btn-kits{
-    background-color: #A2E8DD;
-}
-
-.btn-linha{
-    background-color: #fffa98;
-}
-
-.btn-ace{
-    background-color: #CBCCFF;
+.solucao{
+    padding-bottom: 50px;
 }
