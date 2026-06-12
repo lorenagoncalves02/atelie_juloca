@@ -1,14 +1,15 @@
 from flask import Flask, flash, redirect, render_template, request, session
-import mysql.connector
-from model.comentarios import inserir_comentario
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
+# from model.produtos import select_produtos
 
 app = Flask(__name__)
 app.secret_key = "mem424"
 
 
 @app.route("/")
+def home():
+    return render_template("principal.html")
 
 @app.route("/cadastro", methods=["GET"])
 def pagina_cadastro():
@@ -51,41 +52,11 @@ def fazer_login():
         return redirect("/login")
     
 
-    
-@app.route("/produto", methods=["GET"])
-def pagina_produto_unico():
-    return render_template("produto_unico.html")
 
-
-@app.route("/produto/comentarios", methods=["POST"])
-def pagina_comentarios():
-    if "usuario_logado" in session:
-        email = session["usuario_logado"]["email"]
-        comentario = request.form.get("comentario")
-        cod_produto = request.form.get("cod_prod")
-        inserir_comentario(email, comentario, cod_produto)
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@app.route("/produtos")
+def pg_produtos():
+    itens_produtos = select_produtos()
+    return render_template ("produto.html", item_produtos = itens_produtos)
 
 
 
@@ -94,4 +65,9 @@ def pagina_comentarios():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
 

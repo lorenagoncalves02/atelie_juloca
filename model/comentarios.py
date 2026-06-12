@@ -17,3 +17,9 @@ def inserir_comentario(comentario, cod_prod):
     
     except Exception as erro:
         print(erro)
+
+# def recuperar_comentario():
+#     try:
+#         conexao, cursor = conectar()
+
+#         cursor.execute()
