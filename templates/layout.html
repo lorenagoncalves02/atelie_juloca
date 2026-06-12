@@ -19,17 +19,13 @@
         <div class="header-logo">
             <img src="../static/img/logo.png" alt="logo" width="300px" >
         </div>
-        {%for categoria in categoria%}
-        <nav class="header-topicos">
-            <ul class="header-lista">
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
+
+        <nav class="header-topicos" id="lista_topicos">
+            <ul class="header-lista" id="lista-cat">
+                <li><a href=""></a>ERRO</li>
             </ul>
         </nav>
-        {%endfor%}
+ 
 
         <form class="form-header" role="search">
             <input class="form-header-inp" type="search" placeholder="Pesquise Aqui..." aria-label="Search"/>
@@ -49,6 +45,6 @@
 
      
 
-    
+     <script src="{{ url_for('static',filename='header.js') }}"></script>
 </body>
 </html>

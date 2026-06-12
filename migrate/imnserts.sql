@@ -2,23 +2,29 @@ USE juloca;
 
 insert into `juloca`.`categoria`
 (
-nome_categoria
+nome_categoria, 
+url_categoria
 )
 VALUE
 (
-"Pagina Inicial"
+"Pagina Inicial",
+"#content-pginical"
 ),
 (
-"Amigurumis"
+"Amigurumis",
+"#content-amigurumi"
 ),
 (
-"Kits"
+"Kits",
+"#content-kits"
 ),
 (
-"Linhas"
+"Linhas",
+"#content-linha"
 ),
 (
-"Acessórios"
+"Acessórios",
+"#content-acessorio"
 );
 select * from categoria;
 insert into `juloca`.`produto`

@@ -73,3 +73,28 @@
 
 
 }
+
+/* 1. Garante que a página ocupe a altura total da tela */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* 2. Transforma o body em um container Flexbox vertical */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. O "main" vai ocupar todo o espaço restante, empurrando o footer */
+.content {
+    flex: 1;
+}
+
+/* Estilização básica (opcional, só para você ver acontecer) */
+header, footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

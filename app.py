@@ -1,7 +1,8 @@
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
 from model.produtos import select_produtos
+from model.categorias import select_categorias
 
 app = Flask(__name__)
 app.secret_key = "mem424"
@@ -10,6 +11,13 @@ app.secret_key = "mem424"
 @app.route("/")
 def home():
     return render_template("principal.html")
+
+@app.route("/api/header")
+def api_header():
+    categorias = select_categorias()
+    return jsonify(categorias), 200
+
+
 
 @app.route("/cadastro", methods=["GET"])
 def pagina_cadastro():
