@@ -63,6 +63,10 @@ def pg_produtos():
 
 
 
+@app.route("/produto", methods=["GET"])
+def pg_produto_unico():
+    return render_template("produto_unico.html")
+
 
 
 @app.route("/produto/<int:cod_prod>")
