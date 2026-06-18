@@ -8,7 +8,7 @@ url_categoria
 VALUE
 (
 "Pagina Inicial",
-"#content-pginical"
+"/"
 ),
 (
 "Amigurumis",
@@ -258,6 +258,7 @@ VALUES(
 
 select * from produto;
 select * from categoria;
+
 
 
 
