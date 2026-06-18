@@ -11,7 +11,7 @@ async function mostrar_header()
       
         for (let categoria of categorias){
             let linha = `
-                        <li><a href="${categoria.url_categoria}"></a>${categoria.nome_categoria}</li>
+                        <li><a href=${categoria.url_categoria}>${categoria.nome_categoria}</a></li>
                         `
         categorias_lista.innerHTML += linha
         }
