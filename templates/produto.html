@@ -2,14 +2,12 @@
 
 {%block css_pessoal%} 
 <link rel="stylesheet" href="../static/produtos.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 {% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-
-
-    
+   
 <body>
     <section class="cards__container container my-4">
     <div class="row">
@@ -23,7 +21,7 @@
                         
                         <div class="card-actions">
                             <button class="card-button btn-comprar">Comprar Agora</button>
-                            <button class="card-button btn-carrinho" aria-label="Adicionar ao carrinho">
+                            <button onclick="inserirItemCarrinho({{produto.cod_prod}})" class="card-button btn-carrinho" aria-label="Adicionar ao carrinho">
                                 <i class="bi bi-cart3"></i>
                             </button>
                         </div>
@@ -34,5 +32,7 @@
     </div>
 </section>
 </body>
+
+<script src="static/js/carrinho.js"></script>
 
 {% endblock %}

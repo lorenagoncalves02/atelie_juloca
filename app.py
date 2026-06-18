@@ -1,7 +1,8 @@
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
 from model.produtos import select_produtos
+from model.carrinho import recuperar_carrinho, inserir_item, deletar
 
 app = Flask(__name__)
 app.secret_key = "mem424"
@@ -46,9 +47,8 @@ def fazer_login():
 
     if usuario:
         session["usuario_logado"] = usuario
-        return redirect ("/cadastro")
+        return redirect ("/")
     else:
-        flash("Usuário ou senha inválidos.", "danger")
         return redirect("/login")
     
 
@@ -62,6 +62,39 @@ def pg_produtos():
     return render_template ("produto.html", item_produtos = itens_produtos)
 
 
+@app.route("/api/get/carrinho", methods=["GET"])
+def api_get_carrinho():
+    if "usuario_logado" in session:
+        carrinho = recuperar_carrinho(session["usuario_logado"]["email"])
+        return jsonify(carrinho), 200
+    else:
+        return jsonify({"message":"Usuário não logado"}), 401
+    
+
+@app.route("/api/post/item_carrinho", methods=["POST"])
+def api_post_item_carrinho():
+    if "usuario_logado" in session:
+        email = session["usuario_logado"]["email"]
+        dados_json = request.get_json()
+        cod_prod = dados_json.get("cod_prod")
+        quantidade = dados_json.get("quantidade")
+
+        inserir_item(email, cod_prod, quantidade)
+        return jsonify({"message":"Inserido com sucesso"}), 200
+
+    else:
+        return redirect("/login")
+    
+@app.route("/api/post/deletar_item_carrinho", methods=["POST"])
+def api_post_deletar_carrinho():
+    if "usuario_logado" in session:
+        dados_json = request.get_json()
+        cod_prod = dados_json.get("cod_prod")
+        
+        deletar(cod_prod)
+        return jsonify({"message": "Deletado com sucesso"}), 200
+    else:
+        return jsonify({"message": "Usuário não logado"}), 401
 
 
 
