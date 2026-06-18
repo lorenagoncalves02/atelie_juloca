@@ -1,34 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'layout.html' %}
+
+{% block css_pessoal %}
 <link rel="stylesheet" href="../static/produto_unico.css">
+{% endblock %}
 
-<title>Produto</title>
-
-</head>
-<body>
-
-<!-- PRODUTO -->
-
-{% block conteudo %} 
+{% block content %} 
 <section class="produto-container">
 
     <div class="galeria">
 
         <img
-            src="{{ unico.img1 }}"
+            src="{{unico.img1}}"
             class="imagem-principal"
             alt="Produto">
 
         <div class="miniaturas">
 
-            <img src="{{ unico.img1 }}">
+            <img src="{{unico.img1}}">
 
-            <img src="{{ unico.img2 }}">
+            <img src="{{unico.img2}}">
 
-            <img src="{{ unico.img3 }}">
+            <img src="{{unico.img3}}">
 
         </div>
 
@@ -41,84 +33,35 @@
         </div>
 
         <h1 class="nome-produto">
-            {{ unico.nome_prod }}
+            {{unico.nome_prod}}
         </h1>
 
         <div class="preco">
-            {{ unico.preco_prod }}
+            {{unico.preco_prod}}
         </div>
 
         <div class="descricao">
-            {{ unico.descricao_prod }}
+            {{unico.descricao_prod}}
         </div>
 
     </div>
+
+
+</section>
+
+
+<!-- COMENTÁRIOS -->
+
+<section class="comentarios">
+
+    <input type="text" id="nome" placeholder="Seu nome">
+
+    <textarea id="comentario" placeholder="Digite seu comentário"></textarea>
+
+    <button id="btn-enviar-comentario">
+        Enviar comentário
+    </button>
 
 </section>
 {% endblock %}
 
-<!-- COMENTÁRIOS -->
-
-
-<section class="comentarios">
-
-    <h2>Comentários</h2>
-
-    <form class="form-comentario">
-
-        <input
-            type="text"
-            placeholder="Seu nome">
-
-        <textarea
-            placeholder="Digite seu comentário" name="comentario">
-        </textarea>
-
-        <input type="hidden" value="3" name="cod_prod" >
-
-        <button type="submit">
-            Enviar Comentário
-        </button>
-
-    </form>
-
-    <div class="lista-comentarios">
-
-        <div class="comentario">
-            <div class="usuario">
-                Maria Oliveira
-            </div>
-
-            <div class="texto-comentario">
-                Produto excelente! A pigmentação é muito boa
-                e dura bastante na pele.
-            </div>
-        </div>
-
-        <div class="comentario">
-            <div class="usuario">
-                João Santos
-            </div>
-
-            <div class="texto-comentario">
-                Gostei bastante da textura. Fácil de espalhar
-                e deixa um acabamento natural.
-            </div>
-        </div>
-
-        <div class="comentario">
-            <div class="usuario">
-                Ana Paula
-            </div>
-
-            <div class="texto-comentario">
-                Chegou rápido e veio muito bem embalado.
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-</body>
-</html>

@@ -1,8 +1,8 @@
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, jsonify, redirect, render_template, request, session
+from model.comentarios import recuperar_comentario
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
 from model.produtos import recuperar_produto_unico, select_produtos
-from model.comentarios import inserir_comentario
 
 app = Flask(__name__)
 app.secret_key = "mem424"
@@ -49,10 +49,7 @@ def fazer_login():
         session["usuario_logado"] = usuario
         return redirect ("/")
     else:
-        flash("Usuário ou senha inválidos.", "danger")
         return redirect("/login")
-    
-
     
 
 
@@ -62,31 +59,31 @@ def pg_produtos():
     return render_template ("produto.html", item_produtos = itens_produtos)
 
 
-
-@app.route("/produto", methods=["GET"])
-def pg_produto_unico():
-    return render_template("produto_unico.html")
-
-
-
-@app.route("/produto/<int:cod_prod>")
-def retornar_produto(cod_prod):
+@app.route("/produto/<cod_prod>")
+def pg_produto_unico(cod_prod):
     unico = recuperar_produto_unico(cod_prod)
     return render_template("produto_unico.html", unico = unico)
 
 
+@app.route("/api/get/comentarios", methods=["GET"])
+def mostrar_comentarios(email):
+    if "usuario_logado" in session:
+        comentario = recuperar_comentario(session["usuario_logado"]["usuario"])
+        return jsonify(comentario),200
+    else:
+        return jsonify({"message":"Usuário não encontrado."}), 401
+    
+    
+@app.route("/api/post/comentarios", methods=["POST"])
+def comentario_produto():
+    dados = request.get_json()
 
+    cod_prod = dados["cod_prod"]
+    comentario = dados["comentario"]
 
-# @app.route("/produto/comentarios", methods=["POST"])
-# def pagina_comentarios():
-#     if "usuario_logado" in session:
-#         email = session["usuario_logado"]["email"]
-#         comentario = request.form.get("comentario")
-#         cod_produto = request.form.get("cod_prod")
-#         inserir_comentario(email, comentario, cod_produto)
+    # salvar no banco
 
-
-
+    return
 
 
 

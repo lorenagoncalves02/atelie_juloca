@@ -1,25 +1,39 @@
 from database.conexao import conectar
 
-def inserir_comentario(comentario, cod_prod):
-    try: 
+def recuperar_comentario(email:str)->list:
+    conexao, cursor = conectar()
 
-        conexao, cursor = conectar()
-
-        cursor.execute("""
-                       INSERT INTO comentarios (comentario, cod_prod) VALUES (%s, %s)
-                       
-                       """, [comentario, cod_prod])
-        
-        conexao.commit()
-        conexao.close()
-
-        return True
+    cursor.execute("""SELECT comentarios.cod_comentario, 
+                    comentarios.cod_prod, 
+                    comentarios.email, 
+                    comentarios.comentario
+                    from comentarios
+                    where comentarios.email = %s;""", [email]) 
     
-    except Exception as erro:
-        print(erro)
+    comentarios = cursor.fetchall()
 
-# def recuperar_comentario():
-#     try:
-#         conexao, cursor = conectar()
+    conexao.close()
 
-#         cursor.execute()
+    return comentarios
+
+
+def inserir_comentario(comentario, cod_prod):
+
+    conexao, cursor = conectar()
+
+    cursor.execute("""
+                    INSERT INTO comentarios (comentario, cod_prod) VALUES (%s, %s)
+                    
+                    """, [comentario, cod_prod])
+    
+    conexao.commit()
+    conexao.close()
+
+    return True
+    
+
+
+    
+
+
+
