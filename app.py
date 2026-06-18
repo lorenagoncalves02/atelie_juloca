@@ -3,6 +3,7 @@ from model.usuario import cadastro
 from model.usuario import verificar_usuario
 from model.produtos import select_produtos
 from model.categorias import select_categorias
+from model.produtos import select_pro_cat
 
 app = Flask(__name__)
 app.secret_key = "mem424"
@@ -67,7 +68,19 @@ def fazer_login():
 @app.route("/produtos")
 def pg_produtos():
     itens_produtos = select_produtos()
-    return render_template ("produto.html", item_produtos = itens_produtos)
+    categorias = select_categorias()
+    return render_template ("produto.html", item_produtos = itens_produtos, categorias = categorias)
+
+@app.route("/produtos/<id_categoria>")
+def pg_prod_cat(id_categoria):
+    itens_pro_cat = select_pro_cat(id_categoria)
+    categorias = select_categorias()
+    return render_template ("produto.html", item_produtos = itens_pro_cat, categorias = categorias)
+
+@app.route("/categorias")
+def categorias():
+    categor = select_categorias()
+    return render_template("produto.html", categoria = categor)
 
 
 
