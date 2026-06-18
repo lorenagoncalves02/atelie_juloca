@@ -62,28 +62,25 @@ def pg_produtos():
 @app.route("/produto/<cod_prod>")
 def pg_produto_unico(cod_prod):
     unico = recuperar_produto_unico(cod_prod)
-    return render_template("produto_unico.html", unico = unico)
+    comentarios = recuperar_comentario(cod_prod)
+    return render_template("produto_unico.html", unico = unico, comentarios = comentarios)
 
 
-@app.route("/api/get/comentarios", methods=["GET"])
-def mostrar_comentarios(email):
-    if "usuario_logado" in session:
-        comentario = recuperar_comentario(session["usuario_logado"]["usuario"])
-        return jsonify(comentario),200
-    else:
-        return jsonify({"message":"Usuário não encontrado."}), 401
+
+@app.route("/produto/comentarios", methods=["POST"])
+def adicionar_comentario():
+    if not session.get("usuario_logado"):
+        return redirect("/login")
+
+    cod_prod = request.form.get("cod_prod")
+    comentario = request.form.get("comentario")
+
+    usuario = session["usuario_logado"]
+    email = usuario["email"]
+
+    adicionar_comentario(cod_prod, email, comentario)    
+    return redirect("/")
     
-    
-@app.route("/api/post/comentarios", methods=["POST"])
-def comentario_produto():
-    dados = request.get_json()
-
-    cod_prod = dados["cod_prod"]
-    comentario = dados["comentario"]
-
-    # salvar no banco
-
-    return
 
 
 

@@ -52,16 +52,42 @@
 
 <!-- COMENTÁRIOS -->
 
-<section class="comentarios">
+<section class="novo-comentario">
 
-    <input type="text" id="nome" placeholder="Seu nome">
+    {% if session.get("usuario_logado") %}
 
-    <textarea id="comentario" placeholder="Digite seu comentário"></textarea>
+        <h3>Deixe seu comentário</h3>
 
-    <button id="btn-enviar-comentario">
-        Enviar comentário
-    </button>
+        <form action="/comentario/adicionar" method="POST">
+
+            <input
+                type="hidden"
+                name="cod_prod"
+                value="{{ produto.cod_prod }}"
+            >
+
+            <textarea
+                name="comentario"
+                rows="5"
+                required
+                placeholder="Escreva sua opinião sobre o produto...">
+            </textarea>
+
+            <button type="submit">
+                Enviar comentário
+            </button>
+
+        </form>
+
+    {% else %}
+
+        <p>
+            Você precisa estar logado para comentar.
+        </p>
+
+    {% endif %}
 
 </section>
+
 {% endblock %}
 

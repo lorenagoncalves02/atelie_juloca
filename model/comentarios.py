@@ -1,14 +1,15 @@
 from database.conexao import conectar
 
+
 def recuperar_comentario(email:str)->list:
     conexao, cursor = conectar()
 
-    cursor.execute("""SELECT comentarios.cod_comentario, 
-                    comentarios.cod_prod, 
-                    comentarios.email, 
-                    comentarios.comentario
+    cursor.execute("""SELECT cod_comentario, 
+                    cod_prod, 
+                    email, 
+                    comentario
                     from comentarios
-                    where comentarios.email = %s;""", [email]) 
+                    where email = %s;""", [email]) 
     
     comentarios = cursor.fetchall()
 
@@ -17,19 +18,18 @@ def recuperar_comentario(email:str)->list:
     return comentarios
 
 
-def inserir_comentario(comentario, cod_prod):
+def inserir_comentario(email, comentario, cod_prod):
 
     conexao, cursor = conectar()
 
     cursor.execute("""
-                    INSERT INTO comentarios (comentario, cod_prod) VALUES (%s, %s)
-                    
-                    """, [comentario, cod_prod])
-    
+        INSERT INTO comentarios
+        (cod_prod, email, comentario)
+        VALUES (%s, %s, %s)
+    """, [cod_prod, email, comentario])
+
     conexao.commit()
     conexao.close()
-
-    return True
     
 
 
