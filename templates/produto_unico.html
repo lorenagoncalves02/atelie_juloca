@@ -1,102 +1,108 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto de Crochê</title>
-    <link rel="stylesheet" href="../static/produto_unico.css">
-</head>
-<body>
+{% extends 'layout.html' %}
 
-    <section class="produto">
+{% block css_pessoal %}
+<link rel="stylesheet" href="../static/produto_unico.css">
+{% endblock %}
 
-        <!-- LADO ESQUERDO -->
-        <div class="galeria">
+{% block content %} 
+<section class="produto-container">
 
-            <div class="imagem-principal">
-                <img src="img/bolsa-principal.jpg" alt="Bolsa de Crochê">
-            </div>
+    <div class="galeria">
 
-            <div class="miniaturas">
-                <img src="img/bolsa1.jpg" alt="">
-                <img src="img/bolsa2.jpg" alt="">
-                <img src="img/bolsa3.jpg" alt="">
-            </div>
+        <img
+            src="{{unico.img1}}"
+            class="imagem-principal"
+            alt="Produto">
 
-        </div>
+        <div class="miniaturas">
 
-        <!-- LADO DIREITO -->
-        <div class="info-produto">
+            <img src="{{unico.img1}}">
 
-            <span class="categoria">
-                Bolsas Artesanais
-            </span>
+            <img src="{{unico.img2}}">
 
-            <h1>
-                Bolsa de Crochê Floral Feita à Mão
-            </h1>
-
-            <p class="descricao">
-                Bolsa artesanal confeccionada em crochê com acabamento
-                delicado e resistente. Produzida manualmente com fios
-                premium, perfeita para uso diário ou ocasiões especiais.
-            </p>
-
-            <div class="linha"></div>
-
-            <div class="preco">
-                R$ 129,90
-            </div>
-
-            <button>
-                ADICIONAR AO CARRINHO
-            </button>
+            <img src="{{unico.img3}}">
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- COMENTÁRIOS -->
+    <div class="info-produto">
 
-    <section class="comentarios">
-
-        <h2>Comentários dos Clientes</h2>
-
-        <div class="comentario">
-            <strong>Mariana</strong>
-            <p>
-                Produto lindo e muito bem feito.
-                A qualidade superou minhas expectativas.
-            </p>
+        <div class="categoria">
+            Categoria: Blush Cremoso
         </div>
 
-        <div class="comentario">
-            <strong>Fernanda</strong>
-            <p>
-                Acabamento impecável. Compraria novamente.
-            </p>
+        <h1 class="nome-produto">
+            {{unico.nome_prod}}
+        </h1>
+
+        <div class="preco">
+            {{unico.preco_prod}}
         </div>
 
-        <form class="novo-comentario">
+        <div class="descricao">
+            {{unico.descricao_prod}}
+        </div>
 
-            <h3>Deixe seu comentário</h3>
+    </div>
+
+
+</section>
+
+
+<!-- COMENTÁRIOS -->
+<section class="novo-comentario">
+
+    {% if session.get("usuario_logado") %}
+
+        <h3>Deixe seu comentário</h3>
+
+        <form action="/produto/comentarios" method="POST">
 
             <input
-                type="text"
-                placeholder="Seu nome"
+                type="hidden"
+                name="cod_prod"
+                value="{{ unico.cod_prod }}"
             >
 
             <textarea
-                placeholder="Escreva sua avaliação..."
-            ></textarea>
+                name="comentario"
+                rows="5"
+                required>
+            </textarea>
 
             <button type="submit">
-                Enviar Comentário
+                Enviar comentário
             </button>
 
         </form>
 
-    </section>
+    {% else %}
 
-</body>
-</html>
+        <p>Você precisa estar logado para comentar.</p>
+
+    {% endif %}
+
+</section>
+
+
+<section class="lista-comentarios">
+
+    <h3>Comentários</h3>
+
+    {% for comentario in comentarios %}
+
+        <div class="comentario">
+
+            <strong>{{ comentario.email }}</strong>
+
+            <p>{{ comentario.comentario }}</p>
+
+        </div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}
+

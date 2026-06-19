@@ -38,9 +38,11 @@ CREATE TABLE if not exists produto (
 
 CREATE TABLE if not exists comentarios (
  cod_comentario  int auto_increment PRIMARY KEY,
+ cod_prod int,
  email VARCHAR(50) NOT NULL,
  comentario VARCHAR(300),
- CONSTRAINT fk_comentarios_login FOREIGN KEY (email) REFERENCES cadastro (email)
+ CONSTRAINT fk_comentarios_login FOREIGN KEY (email) REFERENCES cadastro (email),
+ CONSTRAINT fk_cod_prod FOREIGN KEY (cod_prod) REFERENCES produto (cod_prod)
 );
 
 
@@ -52,3 +54,8 @@ CREATE TABLE if not exists item_carrinho (
  quantidade INT, 
  CONSTRAINT fk_item_carrinho_carrinho FOREIGN KEY (cod_carrinho) REFERENCES carrinho (cod_carrinho)
 );
+
+
+
+
+

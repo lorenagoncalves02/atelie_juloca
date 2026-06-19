@@ -16,7 +16,8 @@ def cadastro(nome:str, email:str, telefone:str, endereco:str, senha:str):
         return True
     
     except Exception as erro:
-        print(erro)
+        print("ERRO NO CADASTRO:", erro)
+        return False
 
 
 def verificar_usuario(email, senha):
@@ -35,6 +36,9 @@ def verificar_usuario(email, senha):
     
     except Exception as erro:
         print(erro)
+
+
+
 
 
 
