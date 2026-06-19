@@ -113,10 +113,12 @@ def adicionar_comentario():
     return redirect(f"/produto/{cod_prod}")
 
 
+
+
 @app.route("/logout")
 def rota_logout():
-    session.clear
-    return redirect ("/login")
+    session.clear()
+    return redirect ("/")
 
     
 

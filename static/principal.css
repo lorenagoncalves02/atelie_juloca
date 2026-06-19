@@ -1,14 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
     background-color: #fff9f2;
 }
+
 /* Carrossel */
 .carousel-img {
     height: 70vh;
@@ -16,50 +17,54 @@ body{
 }
 
 /* Faixa destaque */
-.destaques{
+.destaques {
     background-image: url(img/destaques.png);
     width: 100vw;
-    height: 20vh;  
+    height: 20vh;
 }
 
-.text{
+.text {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 20vh;
     color: #7a3b00;
-    font-family:'Franklin Gothic Medium';
-    
+    font-family: 'Franklin Gothic Medium';
+
 }
 
 /* Destaque amigurumi */
 
-.info-section{
+.info-section {
     background-color: #fff9f2;
     border-radius: 20px;
-    border: 5px solid #CE7E8D; /* Detalhe lateral */
+    border: 5px solid #CE7E8D;
+    /* Detalhe lateral */
     color: #CE7E8D;
 }
 
 
 /* Cards */
-.card{
+.card {
     height: 30vh;
     padding-top: 20px;
     display: flex;
     align-items: center;
     background-color: #fff9f2;
     border-color: #CE7E8D;
-  
+
 
     /* linha em cima do texto */
     text-decoration: overline;
-    text-decoration-color: #CE7E8D; /* Cor da linha */
-    text-decoration-thickness: 4px; /* Espessura da linha */
-    text-underline-offset: 6px; /* Distância entre o texto e a linha */
+    text-decoration-color: #CE7E8D;
+    /* Cor da linha */
+    text-decoration-thickness: 4px;
+    /* Espessura da linha */
+    text-underline-offset: 6px;
+    /* Distância entre o texto e a linha */
 }
 
-.card-body{
+.card-body {
     padding-top: 40px;
     color: #7a3b00;
 
@@ -67,7 +72,7 @@ body{
 
 /* Botão */
 
-.btn{
+.btn {
     border-radius: 5px;
     border: none;
     padding: 8px;
@@ -76,14 +81,94 @@ body{
     background-color: #CE7E8D;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #c06e7d;
     color: #ffffff;
-    transform: translateY(-2px); /* Dá um leve efeito de "levantar" */
+    transform: translateY(-2px);
+    /* Dá um leve efeito de "levantar" */
     box-shadow: 0 6px 12px rgba(122, 59, 0, 0.2);
 }
 
-.solucao{
+.solucao {
     padding-bottom: 50px;
 }
 
+
+/* ASIDE CARRINHO */
+
+/* --- 1. O BOTÃO FLUTUANTE (CONGELADO) --- */
+.header__cart-btn {
+    position: fixed;   /* Fixa o botão na tela */
+    bottom: 30px;      /* Distância do fundo */
+    right: 30px;       /* Distância da direita */
+    width: 60px;
+    height: 60px;
+    background-color: #7a3b00; /* Cor verde de destaque */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Deixa redondo */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
+    z-index: 999;      /* Fica acima de tudo na página */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.header__cart-btn:hover {
+    transform: scale(1.1); /* Efeito de aumentar ao passar o mouse */
+}
+
+/* --- 2. O MENU LATERAL (ASIDE) --- */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -100%;      /* Começa escondido fora da tela (à direita) */
+    width: 350px;      /* Largura do carrinho */
+    height: 100vh;     /* Altura total da tela */
+    background-color: #fff9f2;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1000;     /* Fica acima do botão flutuante */
+    transition: right 0.4s ease; /* Animação suave de deslizar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 3. ESTADO ATIVO (QUANDO O JS FUNCIONA) --- */
+.cart.active {
+    right: 0;          /* Traz o carrinho para dentro da tela */
+}
+
+/* --- 4. ESTILIZAÇÃO INTERNA DO CARRINHO --- */
+.cart__header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart__items {
+    flex-grow: 1;      /* Faz os itens ocuparem o espaço central */
+    overflow-y: auto;  /* Se tiver muitos itens, cria scroll interno */
+    padding: 20px;
+}
+
+.cart__footer {
+    padding: 20px;
+    background-color: #faecdd;
+    border-top: 1px solid #eee;
+}
+
+.cart__btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #7a3b00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}

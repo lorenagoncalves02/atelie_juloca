@@ -7,20 +7,22 @@
 {% block content %} 
 <section class="produto-container">
 
+
+
     <div class="galeria">
 
         <img
-            src="{{unico.img1}}"
+            src="{{unico.img_1}}"
             class="imagem-principal"
             alt="Produto">
 
         <div class="miniaturas">
 
-            <img src="{{unico.img1}}">
+            <img src="{{unico.img_1}}">
 
-            <img src="{{unico.img2}}">
+            <img src="{{unico.img_2}}">
 
-            <img src="{{unico.img3}}">
+            <img src="{{unico.img_3}}">
 
         </div>
 
@@ -40,6 +42,10 @@
             {{unico.descricao_prod}}
         </div>
 
+        <button class="btn-carrinho">
+            Comprar
+        </button>
+
     </div>
 
     <div class="acoes-produto">
@@ -50,9 +56,7 @@
         <button>+</button>
     </div>
 
-    <button class="btn-carrinho">
-        Adicionar ao Carrinho
-    </button>
+
 
 </div>
 
