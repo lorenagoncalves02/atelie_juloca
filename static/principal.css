@@ -37,11 +37,9 @@ body{
 .info-section{
     background-color: #fff9f2;
     border-radius: 20px;
-    border-left: 8px solid #CE7E8D; /* Detalhe lateral */
-    border-right: 8px solid #CE7E8D;
+    border: 5px solid #CE7E8D; /* Detalhe lateral */
     color: #CE7E8D;
 }
-
 
 
 /* Cards */
