@@ -34,38 +34,13 @@ body{
 
 /* Destaque amigurumi */
 
-.info-section-amigu {
-    background-color: white;
+.info-section{
+    background-color: #fff9f2;
     border-radius: 20px;
-    border-left: 8px solid #FFC0CB; /* Detalhe lateral */
-    border-right: 8px solid #FFC0CB;
-    color: #FFC0CB;
+    border: 5px solid #CE7E8D; /* Detalhe lateral */
+    color: #CE7E8D;
 }
 
-.info-section-kit {
-    background-color: white;
-    border-radius: 20px;
-    border-left: 8px solid #A2E8DD; /* Detalhe lateral */
-    border-right: 8px solid #A2E8DD; 
-    color: #A2E8DD;
-
-}
-
-.info-section-linha {
-    background-color: white;
-    border-radius: 20px;
-    border-left: 8px solid #fffa98; /* Detalhe lateral */
-    border-right: 8px solid #fffa98;
-    color: #fffa98;
-}
-
-.info-section-ace {
-    background-color: white;
-    border-radius: 20px;
-    border-left: 8px solid #CBCCFF; /* Detalhe lateral */
-    border-right: 8px solid #CBCCFF;
-    color: #CBCCFF;
-}
 
 /* Cards */
 .card{
@@ -73,51 +48,42 @@ body{
     padding-top: 20px;
     display: flex;
     align-items: center;
-}
+    background-color: #fff9f2;
+    border-color: #CE7E8D;
+  
 
-.card-amigu{
-    border-color: #FFC0CB
-}
-
-.card-kit{
-    border-color: #A2E8DD
-}
-
-.card-linha{
-    border-color: #fffa98
-}
-
-.card-ace{
-    border-color: #CBCCFF
+    /* linha em cima do texto */
+    text-decoration: overline;
+    text-decoration-color: #CE7E8D; /* Cor da linha */
+    text-decoration-thickness: 4px; /* Espessura da linha */
+    text-underline-offset: 6px; /* Distância entre o texto e a linha */
 }
 
 .card-body{
     padding-top: 40px;
     color: #7a3b00;
+
 }
 
-/* Botões cards */
+/* Botão */
 
-button{
+.btn{
     border-radius: 5px;
     border: none;
-    padding: 5px;
-    color: #7a3b00;
+    padding: 8px;
+    color: #ffffff;
     font-family: 'Franklin Gothic Medium';
+    background-color: #CE7E8D;
 }
 
-.btn-amigu{
-    background-color: #FFC0CB;
+.btn:hover{
+    background-color: #c06e7d;
+    color: #ffffff;
+    transform: translateY(-2px); /* Dá um leve efeito de "levantar" */
+    box-shadow: 0 6px 12px rgba(122, 59, 0, 0.2);
 }
 
-.btn-kits{
-    background-color: #A2E8DD;
+.solucao{
+    padding-bottom: 50px;
 }
 
-.btn-linha{
-    background-color: #fffa98;
-}
-
-.btn-ace{
-    background-color: #CBCCFF;
-}

@@ -1,4 +1,3 @@
-
 from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
@@ -23,11 +22,11 @@ app.secret_key = "mem424"
 def home():
     return render_template("principal.html")
 
+
 @app.route("/api/header")
 def api_header():
     categorias = select_categorias()
     return jsonify(categorias), 200
-
 
 
 @app.route("/cadastro", methods=["GET"])
@@ -99,7 +98,6 @@ def pg_produto_unico(cod_prod):
     return render_template("produto_unico.html", unico = unico, comentarios = comentarios)
 
 
-
 @app.route("/produto/comentarios", methods=["POST"])
 def adicionar_comentario():
     if not session.get("usuario_logado"):
@@ -114,8 +112,6 @@ def adicionar_comentario():
     inserir_comentario(email, comentario, cod_prod)   
     return redirect(f"/produto/{cod_prod}")
     
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
