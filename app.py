@@ -1,4 +1,5 @@
 from flask import Flask, flash, redirect, render_template, request, session, jsonify
+
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
 from model.produtos import select_produtos
@@ -6,7 +7,10 @@ from model.categorias import select_categorias
 from model.produtos import select_pro_cat
 
 app = Flask(__name__)
+
 app.secret_key = "mem424"
+
+
 
 
 @app.route("/")
