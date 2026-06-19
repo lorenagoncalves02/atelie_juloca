@@ -1,3 +1,11 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                     url(img/destaques.png);
+}
+
+
 /* ==========================================
    Grid de 3 Colunas (Sem quebras)
    ========================================== */
@@ -103,4 +111,27 @@
 
 .btn-carrinho i {
     font-size: 1.1rem;
+}
+
+.filtro-cat{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #5c4326;
+}
+
+.filtro-categoria{
+    font-family: 'Times New Roman', Times, serif;
+    color: #5c4326;
+    font-size: 25px;
+}
+.filtro{
+    gap: 50px;
+    border-color: #f3be8b;
+    border-radius: 20px;
+
+
 }
