@@ -8,8 +8,6 @@
 
 <link rel="stylesheet" href="../static/principal.css">
 
-<link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
 </head>
 
 <body>
@@ -236,46 +234,11 @@
 
     </main>
 
-    <body>
-
-        <button class="header__cart-btn" onclick="toggleCart()">
-            <span class="material-symbols-outlined">shopping_cart</span>
-        </button>
-
-        <aside class="cart" id="cart">
-
-            <div class="cart__header">
-                <strong style="color: black;">Seu Carrinho</strong>
-                <span onclick="toggleCart()" style="cursor:pointer; color: black;">✖</span>
-            </div>
-
-            <div class="cart__items" id="cart-items">
 
 
-            </div>
-
-            <div class="cart__footer">
-                <div class="cart__total" style="color: black;">
-                    <strong style="color: black;" id="cart-total">Total:</strong>R$ 0,00
-                </div>
-
-                <button class="cart__btn">
-                    Finalizar Pedido
-                </button>
-            </div>
-
-        </aside>
 
 
-        <script>
-            
-            function toggleCart() {
-                const cart = document.getElementById("cart");
-                cart.classList.toggle("active");
-            }
-        </script>
-
-        </script>
+        
 
 
 

@@ -1,0 +1,20 @@
+insert into `juloca`.`produto`
+(
+ nome_prod,
+ descricao_prod,
+ preco_prod,
+ img_1,
+ img_2,
+ img_3,
+ id_categoria
+)
+values
+(
+"Kit Elefantinho",
+"Kit completo com agulha, linhas, acessórios e receita.",
+"60.00",
+"/static/img/37_1.png",
+"/static/img/36_1.png",
+"/static/img/36_1.png",
+"3"
+);
