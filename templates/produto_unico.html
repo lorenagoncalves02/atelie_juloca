@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block css_pessoal %}
-<link rel="stylesheet" href="../static/produto_unico.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='produto_unico.css') }}">
 {% endblock %}
 
 {% block content %} 
@@ -42,23 +42,26 @@
             {{unico.descricao_prod}}
         </div>
 
+        <div class="quantidade">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+        </div>
+
         <button class="btn-carrinho">
             Comprar
         </button>
 
-    </div>
 
-    <div class="acoes-produto">
 
-    <div class="quantidade">
-        <button>-</button>
-        <span>1</span>
-        <button>+</button>
+
     </div>
 
 
 
-</div>
+
+
+
 
 
 </section>

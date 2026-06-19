@@ -12,6 +12,7 @@
 
 
 .header-topicos{
+    padding-top: 15px;
     display: flex;
     background-color: #fff9f2;
     justify-content: center;
