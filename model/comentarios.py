@@ -1,7 +1,7 @@
 from database.conexao import conectar
 
 
-def recuperar_comentario(email:str)->list:
+def recuperar_comentario(cod_prod):
     conexao, cursor = conectar()
 
     cursor.execute("""SELECT cod_comentario, 
@@ -9,7 +9,7 @@ def recuperar_comentario(email:str)->list:
                     email, 
                     comentario
                     from comentarios
-                    where email = %s;""", [email]) 
+                    where cod_prod = %s;""", [cod_prod]) 
     
     comentarios = cursor.fetchall()
 

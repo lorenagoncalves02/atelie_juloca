@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, redirect, render_template, request, session
-from model.comentarios import recuperar_comentario
+from model.comentarios import inserir_comentario, recuperar_comentario
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
 from model.produtos import recuperar_produto_unico, select_produtos
@@ -63,6 +63,9 @@ def pg_produtos():
 def pg_produto_unico(cod_prod):
     unico = recuperar_produto_unico(cod_prod)
     comentarios = recuperar_comentario(cod_prod)
+
+    print("COMENTARIOS:", comentarios)
+
     return render_template("produto_unico.html", unico = unico, comentarios = comentarios)
 
 
@@ -78,8 +81,8 @@ def adicionar_comentario():
     usuario = session["usuario_logado"]
     email = usuario["email"]
 
-    adicionar_comentario(cod_prod, email, comentario)    
-    return redirect("/")
+    inserir_comentario(email, comentario, cod_prod)   
+    return redirect(f"/produto/{cod_prod}")
     
 
 

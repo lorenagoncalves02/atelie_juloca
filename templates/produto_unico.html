@@ -51,26 +51,24 @@
 
 
 <!-- COMENTÁRIOS -->
-
 <section class="novo-comentario">
 
     {% if session.get("usuario_logado") %}
 
         <h3>Deixe seu comentário</h3>
 
-        <form action="/comentario/adicionar" method="POST">
+        <form action="/produto/comentarios" method="POST">
 
             <input
                 type="hidden"
                 name="cod_prod"
-                value="{{ produto.cod_prod }}"
+                value="{{ unico.cod_prod }}"
             >
 
             <textarea
                 name="comentario"
                 rows="5"
-                required
-                placeholder="Escreva sua opinião sobre o produto...">
+                required>
             </textarea>
 
             <button type="submit">
@@ -81,11 +79,28 @@
 
     {% else %}
 
-        <p>
-            Você precisa estar logado para comentar.
-        </p>
+        <p>Você precisa estar logado para comentar.</p>
 
     {% endif %}
+
+</section>
+
+
+<section class="lista-comentarios">
+
+    <h3>Comentários</h3>
+
+    {% for comentario in comentarios %}
+
+        <div class="comentario">
+
+            <strong>{{ comentario.email }}</strong>
+
+            <p>{{ comentario.comentario }}</p>
+
+        </div>
+
+    {% endfor %}
 
 </section>
 
