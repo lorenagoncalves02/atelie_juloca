@@ -11,11 +11,6 @@
 
 body{
     height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     overflow: hidden;
 
     background: #f7e5d0;
@@ -60,12 +55,17 @@ body::after{
 
 
 .container{
-    position: relative;
-    z-index: 1;
+    padding-top: 20px;
+    min-height: calc(100vh - 200px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .cadastro-card{
+
     width: 430px;
 
     padding: 40px;

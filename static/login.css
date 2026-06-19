@@ -9,11 +9,6 @@
 
 body{
     height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     background: #f7e5d0;
 
     overflow: hidden;
@@ -58,8 +53,11 @@ body::after{
 
 
 .container{
-    position: relative;
-    z-index: 1;
+    min-height: calc(100vh - 200px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
