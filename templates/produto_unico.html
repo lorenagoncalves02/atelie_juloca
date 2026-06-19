@@ -46,6 +46,20 @@
 
     </div>
 
+    <div class="acoes-produto">
+
+    <div class="quantidade">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+    </div>
+
+    <button class="btn-carrinho">
+        Adicionar ao Carrinho
+    </button>
+
+</div>
+
 
 </section>
 
@@ -79,7 +93,13 @@
 
     {% else %}
 
-        <p>Você precisa estar logado para comentar.</p>
+        <p class="aviso-login">
+            Você precisa estar logado para deixar um comentário.
+        </p>
+
+        <div class="login-link">
+            <a href="/login">Fazer login</a>
+        </div>
 
     {% endif %}
 

@@ -18,7 +18,7 @@ body{
 
     overflow: hidden;
 
-    background: #FFB37E;
+    background: #f7e5d0;
 }
 
 
@@ -30,7 +30,7 @@ body::before{
     width: 450px;
     height: 450px;
 
-    background: rgba(255,255,255,0.12);
+    background: rgba(252, 215, 176, 0.35);
 
     border-radius: 50%;
 
@@ -48,7 +48,7 @@ body::after{
     width: 500px;
     height: 500px;
 
-    background: rgba(255,255,255,0.10);
+    background: rgba(252, 215, 176, 0.25);
 
     border-radius: 50%;
 
@@ -72,11 +72,11 @@ body::after{
 
     border-radius: 40px;
 
-    background: rgba(255, 245, 235, 0.22);
+    background: rgba(255, 255, 255, 0.85);
 
     backdrop-filter: blur(15px);
 
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 32px rgba(252, 215, 176, 0.35);
 }
 
 
@@ -88,7 +88,7 @@ body::after{
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.18);
+    background: #fcd7b0;
 
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@ body::after{
 
 .user-icon i{
     font-size: 55px;
-    color: #fff1e6;
+    color: #b57a4c;
 }
 
 /* INPUTS */
@@ -108,7 +108,7 @@ body::after{
     display: flex;
     align-items: center;
 
-    border-bottom: 2px solid rgba(255,255,255,0.7);
+    border-bottom: 2px solid #fcd7b0;
 
     margin-bottom: 28px;
     padding-bottom: 10px;
@@ -117,7 +117,7 @@ body::after{
 .input-box i{
     font-size: 18px;
 
-    color: #D37841;
+    color: #b57a4c;
 
     margin-right: 15px;
 }
@@ -132,11 +132,11 @@ body::after{
 
     font-size: 18px;
 
-    color: #7a3b00;
+    color: #4a4038;
 }
 
 .input-box input::placeholder{
-    color: #9a5a24;
+    color: #8d7a69;
 }
 
 
@@ -149,7 +149,7 @@ button{
     border: none;
     border-radius: 18px;
 
-    background: #D37841;
+    background: #b57a4c;
 
     color: white;
 
@@ -165,7 +165,7 @@ button{
 button:hover{
     transform: scale(1.03);
 
-    box-shadow: 0 0 20px rgba(255, 123, 0, 0.5);
+    box-shadow: 0 0 20px rgba(252, 215, 176, 0.7);
 }
 
 
@@ -180,7 +180,7 @@ button:hover{
 }
 
 .login-link a{
-    color: #D37841;
+    color: #b57a4c;
 
     text-decoration: none;
 
