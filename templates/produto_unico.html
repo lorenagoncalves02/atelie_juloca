@@ -1,42 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'layout.html' %}
+
+{% block css_pessoal %}
 <link rel="stylesheet" href="../static/produto_unico.css">
+{% endblock %}
 
-<title>Produto</title>
-
-</head>
-<body>
-
-<!-- CATEGORIA -->
-
-<div class="breadcrumb">
-    <span>Home</span>
-    <span>Maquiagem</span>
-    <span>Rosto</span>
-    <span>Blush</span>
-</div>
-
-<!-- PRODUTO -->
-
+{% block content %} 
 <section class="produto-container">
 
     <div class="galeria">
 
         <img
-            src="https://picsum.photos/700/700?random=1"
+            src="{{unico.img1}}"
             class="imagem-principal"
             alt="Produto">
 
         <div class="miniaturas">
 
-            <img src="https://picsum.photos/200/200?random=1">
+            <img src="{{unico.img1}}">
 
-            <img src="https://picsum.photos/200/200?random=2">
+            <img src="{{unico.img2}}">
 
-            <img src="https://picsum.photos/200/200?random=3">
+            <img src="{{unico.img3}}">
 
         </div>
 
@@ -49,86 +33,76 @@
         </div>
 
         <h1 class="nome-produto">
-            BT X Coca-Cola Stick Blush Classic Brown
+            {{unico.nome_prod}}
         </h1>
 
         <div class="preco">
-            R$ 71,92
+            {{unico.preco_prod}}
         </div>
 
         <div class="descricao">
-            Blush em stick com textura cremosa que desliza
-            suavemente sobre a pele, proporcionando um
-            acabamento natural e uniforme. Pode ser utilizado
-            nas bochechas, lábios e olhos para criar um visual
-            completo e sofisticado.
+            {{unico.descricao_prod}}
         </div>
 
     </div>
 
+
 </section>
+
 
 <!-- COMENTÁRIOS -->
+<section class="novo-comentario">
 
-<section class="comentarios">
+    {% if session.get("usuario_logado") %}
 
-    <h2>Comentários</h2>
+        <h3>Deixe seu comentário</h3>
 
-    <form class="form-comentario">
+        <form action="/produto/comentarios" method="POST">
 
-        <input
-            type="text"
-            placeholder="Seu nome">
+            <input
+                type="hidden"
+                name="cod_prod"
+                value="{{ unico.cod_prod }}"
+            >
 
-        <textarea
-            placeholder="Digite seu comentário" name="comentario">
-        </textarea>
+            <textarea
+                name="comentario"
+                rows="5"
+                required>
+            </textarea>
 
-        <input type="hidden" value="3" name="cod_prod" >
+            <button type="submit">
+                Enviar comentário
+            </button>
 
-        <button type="submit">
-            Enviar Comentário
-        </button>
+        </form>
 
-    </form>
+    {% else %}
 
-    <div class="lista-comentarios">
+        <p>Você precisa estar logado para comentar.</p>
 
-        <div class="comentario">
-            <div class="usuario">
-                Maria Oliveira
-            </div>
-
-            <div class="texto-comentario">
-                Produto excelente! A pigmentação é muito boa
-                e dura bastante na pele.
-            </div>
-        </div>
-
-        <div class="comentario">
-            <div class="usuario">
-                João Santos
-            </div>
-
-            <div class="texto-comentario">
-                Gostei bastante da textura. Fácil de espalhar
-                e deixa um acabamento natural.
-            </div>
-        </div>
-
-        <div class="comentario">
-            <div class="usuario">
-                Ana Paula
-            </div>
-
-            <div class="texto-comentario">
-                Chegou rápido e veio muito bem embalado.
-            </div>
-        </div>
-
-    </div>
+    {% endif %}
 
 </section>
 
-</body>
-</html>
+
+<section class="lista-comentarios">
+
+    <h3>Comentários</h3>
+
+    {% for comentario in comentarios %}
+
+        <div class="comentario">
+
+            <strong>{{ comentario.email }}</strong>
+
+            <p>{{ comentario.comentario }}</p>
+
+        </div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}
+

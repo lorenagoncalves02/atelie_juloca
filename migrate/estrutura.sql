@@ -53,3 +53,8 @@ CREATE TABLE if not exists item_carrinho (
  quantidade INT, 
  CONSTRAINT fk_item_carrinho_carrinho FOREIGN KEY (cod_carrinho) REFERENCES carrinho (cod_carrinho)
 );
+
+
+
+
+

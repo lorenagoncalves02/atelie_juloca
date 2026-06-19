@@ -1,7 +1,8 @@
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, jsonify, redirect, render_template, request, session
+from model.comentarios import inserir_comentario, recuperar_comentario
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
-from model.produtos import select_produtos
+from model.produtos import recuperar_produto_unico, select_produtos
 
 app = Flask(__name__)
 app.secret_key = "mem424"
@@ -46,9 +47,8 @@ def fazer_login():
 
     if usuario:
         session["usuario_logado"] = usuario
-        return redirect ("/cadastro")
+        return redirect ("/")
     else:
-        flash("Usuário ou senha inválidos.", "danger")
         return redirect("/login")
     
 
@@ -59,7 +59,31 @@ def pg_produtos():
     return render_template ("produto.html", item_produtos = itens_produtos)
 
 
+@app.route("/produto/<cod_prod>")
+def pg_produto_unico(cod_prod):
+    unico = recuperar_produto_unico(cod_prod)
+    comentarios = recuperar_comentario(cod_prod)
 
+    print("COMENTARIOS:", comentarios)
+
+    return render_template("produto_unico.html", unico = unico, comentarios = comentarios)
+
+
+
+@app.route("/produto/comentarios", methods=["POST"])
+def adicionar_comentario():
+    if not session.get("usuario_logado"):
+        return redirect("/login")
+
+    cod_prod = request.form.get("cod_prod")
+    comentario = request.form.get("comentario")
+
+    usuario = session["usuario_logado"]
+    email = usuario["email"]
+
+    inserir_comentario(email, comentario, cod_prod)   
+    return redirect(f"/produto/{cod_prod}")
+    
 
 
 
