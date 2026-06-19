@@ -7,30 +7,28 @@
 {% block content %} 
 <section class="produto-container">
 
+
+
     <div class="galeria">
 
         <img
-            src="{{unico.img1}}"
+            src="{{unico.img_1}}"
             class="imagem-principal"
             alt="Produto">
 
         <div class="miniaturas">
 
-            <img src="{{unico.img1}}">
+            <img src="{{unico.img_1}}">
 
-            <img src="{{unico.img2}}">
+            <img src="{{unico.img_2}}">
 
-            <img src="{{unico.img3}}">
+            <img src="{{unico.img_3}}">
 
         </div>
 
     </div>
 
     <div class="info-produto">
-
-        <div class="categoria">
-            Categoria: Blush Cremoso
-        </div>
 
         <h1 class="nome-produto">
             {{unico.nome_prod}}
@@ -44,7 +42,23 @@
             {{unico.descricao_prod}}
         </div>
 
+        <button class="btn-carrinho">
+            Comprar
+        </button>
+
     </div>
+
+    <div class="acoes-produto">
+
+    <div class="quantidade">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+    </div>
+
+
+
+</div>
 
 
 </section>
@@ -79,7 +93,13 @@
 
     {% else %}
 
-        <p>Você precisa estar logado para comentar.</p>
+        <p class="aviso-login">
+            Você precisa estar logado para deixar um comentário.
+        </p>
+
+        <div class="login-link">
+            <a href="/login">Fazer login</a>
+        </div>
 
     {% endif %}
 

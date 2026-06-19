@@ -111,6 +111,15 @@ def adicionar_comentario():
 
     inserir_comentario(email, comentario, cod_prod)   
     return redirect(f"/produto/{cod_prod}")
+
+
+
+
+@app.route("/logout")
+def rota_logout():
+    session.clear()
+    return redirect ("/")
+
     
 
 if __name__ == "__main__":

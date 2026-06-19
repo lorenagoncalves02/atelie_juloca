@@ -110,3 +110,36 @@ header, footer {
     padding: 20px;
     text-align: center;
 }
+
+.floating-btn {
+    position: fixed;   /* Fixa o botão na tela */
+    bottom: 100px;      /* Distância do fundo */
+    right: 30px;       /* Distância da direita */
+    width: 60px;
+    height: 60px;
+    background-color: #7a3b0094; /* Cor verde de destaque */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Deixa redondo */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
+    z-index: 999;      /* Fica acima de tudo na página */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+/* --- Efeito ao passar o mouse (Hover) --- */
+.floating-btn:hover {
+    background-color: #9e5f3ab2; /* Um roxo ligeiramente mais claro ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra maior */
+    transform: translateY(-5px); /* Move o botão 5px para cima */
+    color: #ffffff; /* Garante que a cor do texto continue branca */
+}
+
+/* --- Estilização opcional do ícone interior --- */
+.floating-btn .btn-icon {
+    display: block;
+    line-height: 1; /* Garante centralização vertical */
+}
