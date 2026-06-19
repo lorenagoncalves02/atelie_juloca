@@ -144,3 +144,84 @@ header, footer {
     display: block;
     line-height: 1; /* Garante centralização vertical */
 }
+
+
+
+/* ASIDE CARRINHO */
+
+/* --- 1. O BOTÃO FLUTUANTE (CONGELADO) --- */
+.header__cart-btn {
+    position: fixed;   /* Fixa o botão na tela */
+    bottom: 30px;      /* Distância do fundo */
+    right: 30px;       /* Distância da direita */
+    width: 60px;
+    height: 60px;
+    background-color: #7a3b00; /* Cor verde de destaque */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Deixa redondo */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
+    z-index: 999;      /* Fica acima de tudo na página */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.header__cart-btn:hover {
+    transform: scale(1.1); /* Efeito de aumentar ao passar o mouse */
+}
+
+/* --- 2. O MENU LATERAL (ASIDE) --- */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -100%;      /* Começa escondido fora da tela (à direita) */
+    width: 350px;      /* Largura do carrinho */
+    height: 100vh;     /* Altura total da tela */
+    background-color: #fff9f2;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1000;     /* Fica acima do botão flutuante */
+    transition: right 0.4s ease; /* Animação suave de deslizar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 3. ESTADO ATIVO (QUANDO O JS FUNCIONA) --- */
+.cart.active {
+    right: 0;          /* Traz o carrinho para dentro da tela */
+}
+
+/* --- 4. ESTILIZAÇÃO INTERNA DO CARRINHO --- */
+.cart__header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart__items {
+    flex-grow: 1;      /* Faz os itens ocuparem o espaço central */
+    overflow-y: auto;  /* Se tiver muitos itens, cria scroll interno */
+    padding: 20px;
+}
+
+.cart__footer {
+    padding: 20px;
+    background-color: #faecdd;
+    border-top: 1px solid #eee;
+}
+
+.cart__btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #7a3b00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
