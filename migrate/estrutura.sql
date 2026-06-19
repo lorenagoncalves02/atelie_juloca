@@ -14,7 +14,8 @@ CREATE TABLE if not exists cadastro (
 
 CREATE TABLE if not exists categoria (
  id_categoria int auto_increment PRIMARY KEY,
- nome_categoria VARCHAR(100)
+ nome_categoria VARCHAR(100),
+ url_categoria VARCHAR(30)
 );
 
 CREATE TABLE if not exists produto (
@@ -32,9 +33,12 @@ CREATE TABLE if not exists produto (
 
 CREATE TABLE if not exists comentarios (
  cod_comentario  int auto_increment PRIMARY KEY,
+ cod_prod int,
  email VARCHAR(50) NOT NULL,
  comentario VARCHAR(300),
- CONSTRAINT fk_comentarios_login FOREIGN KEY (email) REFERENCES cadastro (email)
+ CONSTRAINT fk_comentarios_login FOREIGN KEY (email) REFERENCES cadastro (email),
+ CONSTRAINT fk_cod_prod FOREIGN KEY (cod_prod) REFERENCES produto (cod_prod)
 );
+
 
 

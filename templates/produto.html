@@ -1,15 +1,25 @@
 {% extends 'layout.html' %}
-
-{%block css_pessoal%} 
-<link rel="stylesheet" href="../static/produtos.css">
+ {%block css_pessoal%}
+    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-{% endblock %}
+<link rel="stylesheet" href="../static/produtos.css">
+ {% endblock %}
 
 {% block content %}
 
+<section class="filtro-cat">
+    <label for="filtro-categoria" class="filtro-categoria">Filtrar por:</label>
    
-<body>
-    <section class="cards__container container my-4">
+    <select id="filtro-categoria" name="categoria" class="filtro" onchange="idNavegar(this.value)">
+        <option value="" disabled selected>Selecione uma categoria</option>
+        {% for categoria in categorias %}
+            <option value="{{ categoria.id_categoria }}">{{ categoria.nome_categoria }}</option>
+        {% endfor %}
+    </select>
+</section>
+
+
+<section class="cards__container container my-4">
     <div class="row">
         {% for produto in item_produtos %}
             <div class="col">
@@ -31,7 +41,13 @@
         {% endfor %}
     </div>
 </section>
-</body>
 
-
+<script>
+function idNavegar(id_categoria) {
+    if (id_categoria) {
+        // Redireciona para /produtos/ID_DA_CATEGORIA
+        window.location.href = "/produtos/" + id_categoria;
+    }
+}
+</script>
 {% endblock %}

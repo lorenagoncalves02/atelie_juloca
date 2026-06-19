@@ -1,17 +1,14 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     
     <link rel="stylesheet" href="../static/principal.css">
-
+</head>
 <body>
 
     
-        <div id="amiguCarousel" class="carousel slide w-75 mx-auto mt-5" data-bs-ride="carousel">
+        <div id="amiguCarousel" class="carousel slide w-75 mx-auto mt-5" data-bs-ride="carousel" id="content-pginicial">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#amiguCarousel" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#amiguarousel" data-bs-slide-to="1"></button>
@@ -51,7 +48,7 @@
 
     <main class="container py-5">
 
-        <section class="info-section p-5 mb-5 shadow-sm">
+        <section class="info-section-amigu p-5 mb-5 shadow-sm" id="content-amigurumi">
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="display-5 fw-bold purple-text">Amigurumi</h2>
@@ -95,7 +92,7 @@
             </div>
         </section>
 
-        <section class="info-section p-5 mb-5 shadow-sm">
+        <section class="info-section-kit p-5 mb-5 shadow-sm" id="content-kits">
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="display-5 fw-bold purple-text">Kits</h2>
@@ -139,7 +136,7 @@
             </div>
         </section>
 
-        <section class="info-section p-5 mb-5 shadow-sm">
+        <section class="info-section-linha p-5 mb-5 shadow-sm" id="content-linha">
             <div class="row">
                 <div class="col-12 text-center mb-5">
                     <h2 class="display-5 fw-bold purple-text">Linhas</h2>
@@ -183,7 +180,7 @@
             </div>
         </section>
 
-        <section class="info-section p-5 mb-5 shadow-sm">
+        <section class="info-section-ace p-5 mb-5 shadow-sm" id="content-acessorio">
             <div class="row">
                 <div class="col-12 text-center mb-5">
                     <h2 class="display-5 fw-bold purple-text">Acessórios</h2>
@@ -237,5 +234,4 @@
 
          
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 {% endblock %}

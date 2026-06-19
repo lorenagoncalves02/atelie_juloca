@@ -113,6 +113,25 @@ body{
     font-size: 1.1rem;
 }
 
-.cards__container{
-    padding-bottom: 80px;
+.filtro-cat{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #5c4326;
+}
+
+.filtro-categoria{
+    font-family: 'Times New Roman', Times, serif;
+    color: #5c4326;
+    font-size: 25px;
+}
+.filtro{
+    gap: 50px;
+    border-color: #f3be8b;
+    border-radius: 20px;
+
+
 }
