@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/layout.css">
    <link rel="stylesheet" href="../static/geral.css">
+   
    {%block css_pessoal%} {% endblock %}
     
 
@@ -19,36 +20,43 @@
         <div class="header-logo">
             <img src="../static/img/logo.png" alt="logo" width="300px" >
         </div>
-        {%for categoria in categoria%}
-        <nav class="header-topicos">
-            <ul class="header-lista">
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
-                <li><a href=""></a>{{categoria.nome_categoria}}</li>
+
+        <nav class="header-topicos" id="lista_topicos">
+            <ul class="header-lista" id="lista-cat">
+                <li><a href="/">Pagina Inicial</a></li>
             </ul>
         </nav>
-        {%endfor%}
+ 
 
         <form class="form-header" role="search">
-            <input class="form-header-inp" type="search" placeholder="Pesquise Aqui..." aria-label="Search"/>
-            <button class="form-header-button" type="submit">Buscar</button>
+            <input class="form-header-inp" id="form-input" type="search" placeholder="Pesquise Aqui..." aria-label="Search"/>
+            <button onclick="pesquisar()" type="button" class="form-header-button">Buscar</button>
         </form>
+
+        <div class="header-iconL">
+            <a href="/cadastro"><img src="../static/img/iconeL.png" alt="Iconel" width="50px"></a>
+        </div>
+
+        <div class="header-iconS">
+            <a href=""><img src="../static/img/saida.png" alt="Icones" width="50px"></a>
+        </div>
      </header>
      <main>
     {% block content %}
+
     {% endblock %}
     </main>
     
 
      <footer class="footer-jlc mt-auto py-3">
         <p>Todos direitos reservados</p>
+        <div class="img-inst">
+            <a href="https://www.instagram.com/"><img src="../static/img/iconeiG.png" alt="insta" width="100px"></a>
+
+        </div>
      </footer>
 
-
-     
-
-    
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="{{ url_for('static',filename='header.js') }}"></script>
 </body>
 </html>

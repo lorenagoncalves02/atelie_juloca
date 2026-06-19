@@ -1,16 +1,34 @@
+
+from flask import Flask, flash, redirect, render_template, request, session, jsonify
+from model.usuario import cadastro
+from model.usuario import verificar_usuario
+from model.produtos import select_produtos
+from model.categorias import select_categorias
+from model.produtos import select_pro_cat
 from flask import Flask, jsonify, redirect, render_template, request, session
 from model.comentarios import inserir_comentario, recuperar_comentario
 from model.usuario import cadastro
 from model.usuario import verificar_usuario
 from model.produtos import recuperar_produto_unico, select_produtos
 
+
 app = Flask(__name__)
+
 app.secret_key = "mem424"
+
+
 
 
 @app.route("/")
 def home():
     return render_template("principal.html")
+
+@app.route("/api/header")
+def api_header():
+    categorias = select_categorias()
+    return jsonify(categorias), 200
+
+
 
 @app.route("/cadastro", methods=["GET"])
 def pagina_cadastro():
@@ -56,7 +74,19 @@ def fazer_login():
 @app.route("/produtos")
 def pg_produtos():
     itens_produtos = select_produtos()
-    return render_template ("produto.html", item_produtos = itens_produtos)
+    categorias = select_categorias()
+    return render_template ("produto.html", item_produtos = itens_produtos, categorias = categorias)
+
+@app.route("/produtos/<id_categoria>")
+def pg_prod_cat(id_categoria):
+    itens_pro_cat = select_pro_cat(id_categoria)
+    categorias = select_categorias()
+    return render_template ("produto.html", item_produtos = itens_pro_cat, categorias = categorias)
+
+@app.route("/categorias")
+def categorias():
+    categor = select_categorias()
+    return render_template("produto.html", categoria = categor)
 
 
 @app.route("/produto/<cod_prod>")

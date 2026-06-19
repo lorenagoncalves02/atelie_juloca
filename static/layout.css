@@ -19,19 +19,24 @@
     height: 50px;
     border-radius: 20px;
     width: 50%;
-
+  
 }
 
 .header-lista{
     gap:20px;
     display: flex;
-    list-style: none;
+   
+
+
+
+}
+
+.header-lista a{
+    text-decoration: none;
     font-family:'Times New Roman', Times, serif;
     color: rgb(45, 30, 10);
     font-size:larger;
-
-    
-    
+    list-style: none;
 }
 
 .form-header{
@@ -63,13 +68,45 @@
 
 .footer-jlc{
     background-color: #fcd7b0;
+ 
+
+}
+
+.img-inst{
     display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-jlc p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5c8b88;
+}
+
+/* 1. Garante que a página ocupe a altura total da tela */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* 2. Transforma o body em um container Flexbox vertical */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. O "main" vai ocupar todo o espaço restante, empurrando o footer */
+.content {
+    flex: 1;
+}
+
+/* Estilização básica (opcional, só para você ver acontecer) */
+header, footer {
+    background: #333;
+    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 1rem;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-
-
 }

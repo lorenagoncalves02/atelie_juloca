@@ -19,7 +19,8 @@ CREATE TABLE if not exists carrinho (
 
 CREATE TABLE if not exists categoria (
  id_categoria int auto_increment PRIMARY KEY,
- nome_categoria VARCHAR(100)
+ nome_categoria VARCHAR(100),
+ url_categoria VARCHAR(30)
 );
 
 CREATE TABLE if not exists produto (
